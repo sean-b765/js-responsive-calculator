@@ -1,0 +1,375 @@
+$theme1-main-bg: hsl(222, 26%, 31%);
+$theme1-keypad-bg: hsl(223, 31%, 20%);
+$theme1-screen-bg: hsl(224, 36%, 15%);
+$theme1-keys: hsl(225, 21%, 49%);
+$theme1-keys-shadow: hsl(224, 28%, 35%);
+$theme1-red-keys: hsl(6, 63%, 50%);
+$theme1-red-keys-shadow: hsl(6, 70%, 34%);
+$theme1-light-orange-keys: hsl(30, 25%, 89%);
+$theme1-light-orange-keys-shadow: hsl(28, 16%, 65%);
+$theme1-text-dark: hsl(221, 14%, 31%);
+$theme1-text-light: hsl(0, 0, 100%);
+
+$theme2-main-bg: hsl(0, 0%, 90%);
+$theme2-keypad-bg: hsl(0, 5%, 81%);
+$theme2-screen-bg: hsl(0, 0%, 93%);
+$theme2-keys: hsl(185, 42%, 37%);
+$theme2-keys-shadow: hsl(185, 58%, 25%);
+$theme2-red-keys: hsl(25, 98%, 40%);
+$theme2-red-keys-shadow: hsl(25, 99%, 27%);
+$theme2-light-orange-keys: hsl(45, 7%, 89%);
+$theme2-light-orange-keys-shadow: hsl(35, 11%, 61%);
+$theme2-text-dark: hsl(60, 10%, 19%);
+$theme2-text-light: hsl(0, 0, 100%);
+
+$theme3-main-bg: hsl(268, 75%, 9%);
+$theme3-keypad-bg: hsl(268, 71%, 12%);
+$theme3-screen-bg: hsl(268, 71%, 12%);
+$theme3-keys: hsl(281, 89%, 26%);
+$theme3-keys-shadow: hsl(285, 91%, 52%);
+$theme3-red-keys: hsl(176, 100%, 44%);
+$theme3-red-keys-shadow: hsl(177, 92%, 70%);
+$theme3-light-orange-keys: hsl(268, 47%, 21%);
+$theme3-light-orange-keys-shadow: hsl(290, 70%, 36%);
+$theme3-text-dark: hsl(198, 20%, 13%);
+$theme3-text-secondary: hsl(52, 100%, 62%);
+$theme3-text-light: hsl(0, 0, 100%);
+
+* {
+	font-family: 'Spartan', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.container__header__theme {
+	display: flex;
+	align-items: center;
+}
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	height: 100%;
+	padding-top: calc(min(5rem, 10vh));
+
+	&--theme1 {
+		background: $theme1-main-bg;
+		.container {
+			&__header {
+				color: $theme1-text-light;
+				.toggler {
+					background: $theme1-screen-bg;
+
+					> .indicator {
+						background: $theme1-red-keys;
+					}
+				}
+			}
+			&__calculator {
+				&__view {
+					background: $theme1-screen-bg;
+					color: $theme1-text-light;
+				}
+				&__grid {
+					background: $theme1-keypad-bg;
+					> button {
+						background: $theme1-light-orange-keys;
+						border-bottom: 4px solid $theme1-light-orange-keys-shadow !important;
+						color: $theme1-text-dark;
+
+						&:active {
+							border-bottom: 3px solid $theme1-light-orange-keys-shadow !important;
+						}
+
+						/* DEL, RESET */
+						&.color1 {
+							background: $theme1-keys !important;
+							border-bottom: 4px solid $theme1-keys-shadow !important;
+							color: $theme1-text-light;
+
+							&:active {
+								border-bottom: 3px solid $theme1-keys-shadow !important;
+							}
+						}
+						/* Equals = */
+						&.color2 {
+							background: $theme1-red-keys !important;
+							border-bottom: 4px solid $theme1-red-keys-shadow !important;
+							color: $theme1-text-light;
+
+							&:active {
+								border-bottom: 3px solid $theme1-red-keys-shadow !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&--theme2 {
+		background: $theme2-main-bg;
+		.container {
+			&__header {
+				color: $theme2-text-dark;
+
+				.toggler {
+					background: $theme2-keypad-bg;
+
+					> .indicator {
+						background: $theme2-red-keys;
+					}
+				}
+			}
+			&__calculator {
+				&__view {
+					background: $theme2-screen-bg;
+					color: $theme2-text-dark;
+				}
+				&__grid {
+					background: $theme2-keypad-bg;
+					> button {
+						background: $theme2-light-orange-keys;
+						border-bottom: 4px solid $theme2-light-orange-keys-shadow !important;
+						color: $theme2-text-dark;
+
+						&:active {
+							border-bottom: 3px solid $theme2-light-orange-keys-shadow !important;
+						}
+
+						/* DEL, RESET */
+						&.color1 {
+							background: $theme2-keys !important;
+							border-bottom: 4px solid $theme2-keys-shadow !important;
+							color: $theme2-text-light;
+
+							&:active {
+								border-bottom: 3px solid $theme2-keys-shadow !important;
+							}
+						}
+						/* Equals = */
+						&.color2 {
+							background: $theme2-red-keys !important;
+							border-bottom: 4px solid $theme2-red-keys-shadow !important;
+							color: $theme2-text-light;
+
+							&:active {
+								border-bottom: 3px solid $theme2-red-keys-shadow !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&--theme3 {
+		background: $theme3-main-bg;
+		.container {
+			&__header {
+				color: $theme3-text-secondary;
+
+				.toggler {
+					background: $theme3-keypad-bg;
+
+					> .indicator {
+						background: $theme3-red-keys;
+					}
+				}
+			}
+			&__calculator {
+				&__view {
+					background: $theme3-screen-bg;
+					color: $theme3-text-secondary;
+				}
+				&__grid {
+					background: $theme3-keypad-bg;
+					> button {
+						background: $theme3-light-orange-keys;
+						border-bottom: 4px solid $theme3-light-orange-keys-shadow !important;
+						color: $theme3-text-secondary;
+
+						&:active {
+							border-bottom: 3px solid $theme3-light-orange-keys-shadow !important;
+						}
+
+						/* DEL, RESET */
+						&.color1 {
+							background: $theme3-keys !important;
+							border-bottom: 4px solid $theme3-keys-shadow !important;
+							color: $theme3-text-light;
+
+							&:active {
+								border-bottom: 3px solid $theme3-keys-shadow !important;
+							}
+						}
+						/* Equals = */
+						&.color2 {
+							background: $theme3-red-keys !important;
+							border-bottom: 4px solid $theme3-red-keys-shadow !important;
+							color: $theme3-text-dark;
+
+							&:active {
+								border-bottom: 3px solid $theme3-red-keys-shadow !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.container {
+		position: relative;
+		width: calc(min(600px, 90vw));
+		min-height: 300px;
+		height: auto;
+		margin: auto;
+		padding: 2rem 4rem;
+
+		@media screen and (max-width: 768px) {
+			padding: 0 calc(min(1rem, 1.5vw));
+		}
+
+		&__header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+
+			&__title {
+				font-size: 1.5rem;
+			}
+			&__theme {
+				font-size: 0.7rem;
+				> div {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: start;
+					flex-direction: column;
+					margin-left: 20px;
+
+					> div {
+						position: absolute;
+						width: 100%;
+						transform: translateY(calc(-100% - 5px));
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						padding-inline: 4px;
+					}
+
+					.toggler {
+						position: relative;
+						border-radius: 25px;
+						width: 60px;
+						height: 25px;
+						border: none;
+						padding: 2px;
+						cursor: pointer;
+
+						.indicator {
+							position: relative;
+							width: 15px;
+							height: 15px;
+							border-radius: 50%;
+							transition: all 0.2s ease;
+						}
+
+						&.theme1 > .indicator {
+							left: 4px;
+						}
+						&.theme2 > .indicator {
+							left: 50%;
+							transform: translateX(-50%);
+						}
+						&.theme3 > .indicator {
+							left: calc(100% - 4px);
+							transform: translateX(-100%);
+						}
+					}
+				}
+			}
+		}
+
+		&__calculator {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+
+			&__view,
+			&__grid {
+				padding: 1.5rem;
+
+				@media screen and (max-width: 384px) {
+					padding: calc(min(1rem, 4vw));
+				}
+			}
+
+			&__view {
+				padding-top: 1rem;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+				flex-direction: column;
+				font-size: 1.8rem;
+				position: relative;
+				border-radius: 10px;
+				min-height: calc(min(6rem, 10vh));
+				width: 100%;
+				margin: 10px 10px 20px 10px;
+
+				.previous {
+					font-size: 0.9rem;
+					opacity: 0.6;
+					margin-bottom: 5px;
+				}
+			}
+
+			&__grid {
+				position: relative;
+				display: grid;
+				grid-template-columns: minmax(1fr, 40px);
+				grid-template-rows: minmax(1fr, 40px);
+				border-radius: 10px;
+				gap: calc(min(1rem, 3vw));
+				width: 100%;
+				height: 100%;
+
+				> button {
+					border: none;
+					border-radius: 6px;
+					height: calc(min(60px, 10vh));
+					min-width: calc(min(70px, 15vw));
+					font-size: 1.4rem;
+					cursor: pointer;
+					transition: border 0.1s ease, scale 0.05s linear;
+
+					&:active {
+						scale: 0.985;
+					}
+
+					&.smaller {
+						font-size: 1rem;
+					}
+
+					&#btnReset {
+						grid-column: 1/3;
+					}
+					&#btnEquals {
+						grid-column: 3/5;
+					}
+				}
+			}
+		}
+	}
+}
